@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Copy, Check } from 'lucide-react';
+import { CopyIcon, CheckIcon } from '@primer/octicons-react';
 import { triggerSupportCard } from '../components/ui/SupportCard';
 
 export function ProfileReadme() {
@@ -62,8 +62,8 @@ export function ProfileReadme() {
             onClick={handleCopy}
             className="w-full flex items-center justify-center gap-2 rounded-md bg-github-success px-4 py-2 font-medium text-white hover:bg-github-successHover transition-colors"
           >
-            {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-            {copied ? 'Copied Markdown!' : 'Copy Markdown'}
+            {copied ? <CheckIcon className="h-4 w-4" /> : <CopyIcon className="h-4 w-4" />}
+            {copied ? 'Copied Markdown!' : 'CopyIcon Markdown'}
           </button>
         </div>
 

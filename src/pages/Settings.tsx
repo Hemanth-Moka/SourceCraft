@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
-import { Key } from 'lucide-react';
+import { KeyIcon } from '@primer/octicons-react';
 
 export function Settings() {
   const [token, setToken] = useState('');
@@ -24,7 +24,7 @@ export function Settings() {
     <div className="mx-auto max-w-2xl">
       <div className="mb-8 border-b border-github-border pb-4">
         <h1 className="text-3xl font-bold text-white mb-2 flex items-center gap-3">
-          <Key className="h-8 w-8 text-github-link" /> Settings
+          <KeyIcon className="h-8 w-8 text-github-link" /> Settings
         </h1>
         <p className="text-github-text">Manage your application configuration and API keys.</p>
       </div>

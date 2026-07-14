@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, Star, GitFork, AlertCircle, Calendar } from 'lucide-react';
+import { SearchIcon, StarIcon, RepoForkedIcon, IssueOpenedIcon, CalendarIcon } from '@primer/octicons-react';
 import { motion } from 'framer-motion';
 import { GitHubService, type GitHubRepoDetails } from '../lib/GitHubService';
 import { triggerSupportCard } from '../components/ui/SupportCard';
@@ -57,7 +57,7 @@ export function RepoCompare() {
 
       <form onSubmit={handleCompare} className="mb-8 flex flex-col md:flex-row gap-4 items-center">
         <div className="flex-1 w-full relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-github-muted" />
+          <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-github-muted" />
           <input
             type="text"
             value={repo1Str}
@@ -67,7 +67,7 @@ export function RepoCompare() {
         </div>
         <span className="text-github-muted font-bold px-2 text-sm">VS</span>
         <div className="flex-1 w-full relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-github-muted" />
+          <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-github-muted" />
           <input
             type="text"
             value={repo2Str}
@@ -98,11 +98,11 @@ export function RepoCompare() {
             </thead>
             <tbody className="divide-y divide-github-border">
               {[
-                { label: 'Stars', key: 'stargazers_count', icon: Star, higherIsBetter: true },
-                { label: 'Forks', key: 'forks_count', icon: GitFork, higherIsBetter: true },
-                { label: 'Open Issues', key: 'open_issues_count', icon: AlertCircle, higherIsBetter: false },
-                { label: 'Network', key: 'network_count', icon: GitFork, higherIsBetter: true },
-                { label: 'Watchers', key: 'subscribers_count', icon: Search, higherIsBetter: true },
+                { label: 'Stars', key: 'stargazers_count', icon: StarIcon, higherIsBetter: true },
+                { label: 'Forks', key: 'forks_count', icon: RepoForkedIcon, higherIsBetter: true },
+                { label: 'Open Issues', key: 'open_issues_count', icon: IssueOpenedIcon, higherIsBetter: false },
+                { label: 'Network', key: 'network_count', icon: RepoForkedIcon, higherIsBetter: true },
+                { label: 'Watchers', key: 'subscribers_count', icon: SearchIcon, higherIsBetter: true },
               ].map((metric) => {
                 const v1 = repo1[metric.key as keyof GitHubRepoDetails] as number;
                 const v2 = repo2[metric.key as keyof GitHubRepoDetails] as number;
@@ -126,7 +126,7 @@ export function RepoCompare() {
               })}
               <tr className="hover:bg-github-border/10 transition-colors">
                 <td className="px-6 py-4 font-medium flex items-center gap-2">
-                  <Calendar className="h-4 w-4 text-github-muted" /> Created At
+                  <CalendarIcon className="h-4 w-4 text-github-muted" /> Created At
                 </td>
                 <td className="px-6 py-4 text-center border-l border-github-border">
                   {new Date(repo1.created_at).toLocaleDateString()}

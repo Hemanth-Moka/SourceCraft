@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Copy, Check } from 'lucide-react';
+import { CopyIcon, CheckIcon } from '@primer/octicons-react';
 import { triggerSupportCard } from '../components/ui/SupportCard';
 
 const DEFAULT_TEMPLATE = `# Project Title
@@ -53,8 +53,8 @@ export function ReadmeGenerator() {
           onClick={handleCopy}
           className="flex items-center gap-2 rounded-md bg-github-border px-4 py-2 font-medium text-white hover:bg-github-border/80 transition-colors"
         >
-          {copied ? <Check className="h-4 w-4 text-github-success" /> : <Copy className="h-4 w-4" />}
-          {copied ? 'Copied!' : 'Copy Markdown'}
+          {copied ? <CheckIcon className="h-4 w-4 text-github-success" /> : <CopyIcon className="h-4 w-4" />}
+          {copied ? 'Copied!' : 'CopyIcon Markdown'}
         </button>
       </div>
 

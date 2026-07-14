@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, ExternalLink, GitMerge, AlertCircle, Clock } from 'lucide-react';
+import { SearchIcon, LinkExternalIcon, GitMergeIcon, IssueOpenedIcon, ClockIcon } from '@primer/octicons-react';
 import { motion } from 'framer-motion';
 import { triggerSupportCard } from '../components/ui/SupportCard';
 
@@ -79,7 +79,7 @@ export function OpenSource() {
           </motion.div>
         ))}
         {!loading && issues.length === 0 && (
-          <p className="text-github-muted">Search for a language to find good first issues.</p>
+          <p className="text-github-muted">SearchIcon for a language to find good first issues.</p>
         )}
       </div>
     </div>

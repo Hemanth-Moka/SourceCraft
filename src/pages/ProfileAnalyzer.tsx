@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, Users, Calendar, Star, GitFork, Book } from 'lucide-react';
+import { SearchIcon, PeopleIcon, CalendarIcon, StarIcon, RepoForkedIcon, RepoIcon } from '@primer/octicons-react';
 import { motion } from 'framer-motion';
 import { GitHubService, type GitHubUser, type GitHubRepo } from '../lib/GitHubService';
 import { triggerSupportCard } from '../components/ui/SupportCard';
@@ -60,19 +60,19 @@ export function ProfileAnalyzer() {
         ) : user ? (
           <div className="space-y-4 text-sm text-github-text">
             <div className="flex justify-between border-b border-github-border pb-2">
-              <span className="flex items-center gap-2"><Users className="h-4 w-4"/> Followers</span>
+              <span className="flex items-center gap-2"><PeopleIcon className="h-4 w-4"/> Followers</span>
               <span className="font-bold text-white">{user.followers}</span>
             </div>
             <div className="flex justify-between border-b border-github-border pb-2">
-              <span className="flex items-center gap-2"><Users className="h-4 w-4"/> Following</span>
+              <span className="flex items-center gap-2"><PeopleIcon className="h-4 w-4"/> Following</span>
               <span className="font-bold text-white">{user.following}</span>
             </div>
             <div className="flex justify-between border-b border-github-border pb-2">
-              <span className="flex items-center gap-2"><Book className="h-4 w-4"/> Public Repos</span>
+              <span className="flex items-center gap-2"><RepoIcon className="h-4 w-4"/> Public Repos</span>
               <span className="font-bold text-white">{user.public_repos}</span>
             </div>
             <div className="flex justify-between pt-2">
-              <span className="flex items-center gap-2"><Calendar className="h-4 w-4"/> Joined</span>
+              <span className="flex items-center gap-2"><CalendarIcon className="h-4 w-4"/> Joined</span>
               <span className="font-bold text-white">{new Date(user.created_at).toLocaleDateString()}</span>
             </div>
           </div>
@@ -99,8 +99,8 @@ export function ProfileAnalyzer() {
           </div>
           <div className="flex items-center gap-4 text-xs text-github-muted">
             {repo.language && <div className="flex items-center gap-1"><span className="h-2.5 w-2.5 rounded-full bg-github-link"></span>{repo.language}</div>}
-            <div className="flex items-center gap-1"><Star className="h-3.5 w-3.5" />{repo.stargazers_count}</div>
-            <div className="flex items-center gap-1"><GitFork className="h-3.5 w-3.5" />{repo.forks_count}</div>
+            <div className="flex items-center gap-1"><StarIcon className="h-3.5 w-3.5" />{repo.stargazers_count}</div>
+            <div className="flex items-center gap-1"><RepoForkedIcon className="h-3.5 w-3.5" />{repo.forks_count}</div>
           </div>
         </div>
       ))}
@@ -117,7 +117,7 @@ export function ProfileAnalyzer() {
       <form onSubmit={handleSearch} className="mb-8">
         <div className="flex max-w-md gap-3">
           <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-github-muted" />
+            <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-github-muted" />
             <input
               type="text"
               value={username}

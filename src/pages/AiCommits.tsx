@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MessageSquare, Sparkles, Copy, Check } from 'lucide-react';
+import { CommentIcon, CopilotIcon, CopyIcon, CheckIcon } from '@primer/octicons-react';
 import { triggerSupportCard } from '../components/ui/SupportCard';
 
 export function AiCommits() {
@@ -53,7 +53,7 @@ export function AiCommits() {
               disabled={!diff || loading}
               className="w-full flex justify-center items-center gap-2 rounded-md bg-github-link px-4 py-2 font-medium text-white hover:bg-blue-600 transition-colors disabled:opacity-50"
             >
-              <Sparkles className="h-4 w-4" />
+              <CopilotIcon className="h-4 w-4" />
               {loading ? 'Generating...' : 'Generate Commit Message'}
             </button>
           </div>
@@ -64,7 +64,7 @@ export function AiCommits() {
             Result
             {commitMessage && (
               <button onClick={handleCopy} className="text-github-muted hover:text-white transition-colors">
-                {copied ? <Check className="h-4 w-4 text-github-success" /> : <Copy className="h-4 w-4" />}
+                {copied ? <CheckIcon className="h-4 w-4 text-github-success" /> : <CopyIcon className="h-4 w-4" />}
               </button>
             )}
           </div>
@@ -75,7 +75,7 @@ export function AiCommits() {
               </pre>
             ) : (
               <div className="h-full flex flex-col items-center justify-center text-github-muted">
-                <MessageSquare className="h-12 w-12 mb-4 opacity-50" />
+                <CommentIcon className="h-12 w-12 mb-4 opacity-50" />
                 <p>Your AI generated message will appear here.</p>
               </div>
             )}

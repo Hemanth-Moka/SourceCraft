@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, Star, GitFork, Book } from 'lucide-react';
+import { SearchIcon, StarIcon, RepoForkedIcon, RepoIcon } from '@primer/octicons-react';
 import { motion } from 'framer-motion';
 import { GitHubService } from '../lib/GitHubService';
 import { triggerSupportCard } from '../components/ui/SupportCard';
@@ -71,17 +71,17 @@ export function Stats() {
       {stats && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="grid gap-6 sm:grid-cols-3">
           <div className="rounded-xl border border-github-border bg-github-canvas p-6 text-center">
-            <Star className="mx-auto h-8 w-8 text-yellow-500 mb-2" />
+            <StarIcon className="mx-auto h-8 w-8 text-yellow-500 mb-2" />
             <div className="text-3xl font-bold text-white">{stats.totalStars}</div>
             <div className="text-sm text-github-muted">Total Stars</div>
           </div>
           <div className="rounded-xl border border-github-border bg-github-canvas p-6 text-center">
-            <GitFork className="mx-auto h-8 w-8 text-github-muted mb-2" />
+            <RepoForkedIcon className="mx-auto h-8 w-8 text-github-muted mb-2" />
             <div className="text-3xl font-bold text-white">{stats.totalForks}</div>
             <div className="text-sm text-github-muted">Total Forks</div>
           </div>
           <div className="rounded-xl border border-github-border bg-github-canvas p-6 text-center">
-            <Book className="mx-auto h-8 w-8 text-github-muted mb-2" />
+            <RepoIcon className="mx-auto h-8 w-8 text-github-muted mb-2" />
             <div className="text-3xl font-bold text-white">{stats.totalRepos}</div>
             <div className="text-sm text-github-muted">Recent Repos</div>
           </div>

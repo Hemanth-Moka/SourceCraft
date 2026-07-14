@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, CheckCircle2, XCircle, AlertCircle, FileText, Shield } from 'lucide-react';
+import { SearchIcon, CheckCircleFillIcon, XCircleFillIcon, IssueOpenedIcon, FileIcon, ShieldIcon } from '@primer/octicons-react';
 import { motion } from 'framer-motion';
 import { GitHubService, type GitHubRepoDetails } from '../lib/GitHubService';
 import { triggerSupportCard } from '../components/ui/SupportCard';
@@ -62,7 +62,7 @@ export function RepoHealth() {
       <form onSubmit={handleSearch} className="mb-8">
         <div className="flex max-w-md gap-3">
           <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-github-muted" />
+            <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-github-muted" />
             <input
               type="text"
               value={repoStr}
@@ -103,9 +103,9 @@ export function RepoHealth() {
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-github-border bg-github-canvas p-4 flex items-start gap-4">
-              {hasReadme ? <CheckCircle2 className="h-6 w-6 text-github-success" /> : <XCircle className="h-6 w-6 text-github-danger" />}
+              {hasReadme ? <CheckCircleFillIcon className="h-6 w-6 text-github-success" /> : <XCircleFillIcon className="h-6 w-6 text-github-danger" />}
               <div>
-                <h3 className="font-semibold text-white flex items-center gap-2"><FileText className="h-4 w-4"/> README.md</h3>
+                <h3 className="font-semibold text-white flex items-center gap-2"><FileIcon className="h-4 w-4"/> README.md</h3>
                 <p className="text-sm text-github-muted mt-1">
                   {hasReadme ? 'Repository has a README file.' : 'Missing a README. Essential for project documentation.'}
                 </p>
@@ -113,9 +113,9 @@ export function RepoHealth() {
             </div>
 
             <div className="rounded-lg border border-github-border bg-github-canvas p-4 flex items-start gap-4">
-              {repo.license ? <CheckCircle2 className="h-6 w-6 text-github-success" /> : <XCircle className="h-6 w-6 text-github-danger" />}
+              {repo.license ? <CheckCircleFillIcon className="h-6 w-6 text-github-success" /> : <XCircleFillIcon className="h-6 w-6 text-github-danger" />}
               <div>
-                <h3 className="font-semibold text-white flex items-center gap-2"><Shield className="h-4 w-4"/> License</h3>
+                <h3 className="font-semibold text-white flex items-center gap-2"><ShieldIcon className="h-4 w-4"/> License</h3>
                 <p className="text-sm text-github-muted mt-1">
                   {repo.license ? `Licensed under ${repo.license.name}.` : 'No license found. Users cannot legally use this code.'}
                 </p>
@@ -123,7 +123,7 @@ export function RepoHealth() {
             </div>
 
             <div className="rounded-lg border border-github-border bg-github-canvas p-4 flex items-start gap-4">
-              {repo.description ? <CheckCircle2 className="h-6 w-6 text-github-success" /> : <XCircle className="h-6 w-6 text-github-danger" />}
+              {repo.description ? <CheckCircleFillIcon className="h-6 w-6 text-github-success" /> : <XCircleFillIcon className="h-6 w-6 text-github-danger" />}
               <div>
                 <h3 className="font-semibold text-white">Description</h3>
                 <p className="text-sm text-github-muted mt-1">
@@ -133,7 +133,7 @@ export function RepoHealth() {
             </div>
 
             <div className="rounded-lg border border-github-border bg-github-canvas p-4 flex items-start gap-4">
-              {repo.has_issues ? <CheckCircle2 className="h-6 w-6 text-github-success" /> : <AlertCircle className="h-6 w-6 text-yellow-500" />}
+              {repo.has_issues ? <CheckCircleFillIcon className="h-6 w-6 text-github-success" /> : <IssueOpenedIcon className="h-6 w-6 text-yellow-500" />}
               <div>
                 <h3 className="font-semibold text-white">Issues Enabled</h3>
                 <p className="text-sm text-github-muted mt-1">

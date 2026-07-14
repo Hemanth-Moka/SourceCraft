@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { X, Star } from 'lucide-react';
+import { XIcon, StarIcon } from '@primer/octicons-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Global event bus for triggering the support card
@@ -43,12 +43,12 @@ export function SupportCard() {
             onClick={handleDismiss}
             className="absolute right-2 top-2 rounded-md p-1 text-github-muted hover:bg-github-border hover:text-white transition-colors"
           >
-            <X className="h-4 w-4" />
+            <XIcon className="h-4 w-4" />
           </button>
           
           <div className="flex items-start gap-4 pr-6">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-github-success/20 text-github-success">
-              <Star className="h-5 w-5 fill-github-success" />
+              <StarIcon className="h-5 w-5 fill-github-success" />
             </div>
             <div>
               <h3 className="font-semibold text-white mb-1">Support the project</h3>
@@ -62,8 +62,8 @@ export function SupportCard() {
                 onClick={handleDismiss}
                 className="inline-flex items-center gap-2 rounded-md bg-github-border px-3 py-1.5 text-sm font-medium text-white hover:bg-github-border/80 transition-colors"
               >
-                <Star className="h-4 w-4" />
-                Star on GitHub
+                <StarIcon className="h-4 w-4" />
+                StarIcon on GitHub
               </a>
             </div>
           </div>

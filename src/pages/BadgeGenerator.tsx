@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Copy, Check } from 'lucide-react';
+import { CopyIcon, CheckIcon } from '@primer/octicons-react';
 import { triggerSupportCard } from '../components/ui/SupportCard';
 
 export function BadgeGenerator() {
@@ -114,7 +114,7 @@ export function BadgeGenerator() {
                 onClick={handleCopy}
                 className="flex items-center justify-center rounded-md bg-github-border w-10 hover:bg-github-border/80 transition-colors"
               >
-                {copied ? <Check className="h-4 w-4 text-github-success" /> : <Copy className="h-4 w-4 text-white" />}
+                {copied ? <CheckIcon className="h-4 w-4 text-github-success" /> : <CopyIcon className="h-4 w-4 text-white" />}
               </button>
             </div>
           </div>

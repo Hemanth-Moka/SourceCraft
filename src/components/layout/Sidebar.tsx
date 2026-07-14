@@ -1,21 +1,21 @@
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, User, Activity, FileText, Award, Star, Search, BarChart3, MessageSquare, Edit3, LineChart, Code, Settings as SettingsIcon } from 'lucide-react';
+import { HomeIcon, PersonIcon, PulseIcon, FileIcon, MilestoneIcon, StarIcon, SearchIcon, GraphIcon, CommentIcon, PencilIcon, TelescopeIcon, CodeIcon, GearIcon } from '@primer/octicons-react';
 import { motion } from 'framer-motion';
 
 const navigation = [
-  { name: 'Dashboard', href: '/', icon: LayoutDashboard },
-  { name: 'Profile Analyzer', href: '/profile-analyzer', icon: User },
-  { name: 'Repo Compare', href: '/compare', icon: Code },
-  { name: 'Repo Health', href: '/repo-health', icon: Activity },
-  { name: 'README Generator', href: '/readme-generator', icon: FileText },
-  { name: 'Badge Generator', href: '/badge-generator', icon: Award },
-  { name: 'Profile README', href: '/profile-readme', icon: Star },
-  { name: 'Open Source Finder', href: '/open-source', icon: Search },
-  { name: 'Repo SEO', href: '/seo', icon: LineChart },
-  { name: 'Stats Dashboard', href: '/stats', icon: BarChart3 },
-  { name: 'AI Commits', href: '/ai-commits', icon: MessageSquare },
-  { name: 'Markdown Editor', href: '/markdown', icon: Edit3 },
-  { name: 'Settings', href: '/settings', icon: SettingsIcon },
+  { name: 'Dashboard', href: '/', icon: HomeIcon },
+  { name: 'Profile Analyzer', href: '/profile-analyzer', icon: PersonIcon },
+  { name: 'Repo Compare', href: '/compare', icon: CodeIcon },
+  { name: 'Repo Health', href: '/repo-health', icon: PulseIcon },
+  { name: 'README Generator', href: '/readme-generator', icon: FileIcon },
+  { name: 'Badge Generator', href: '/badge-generator', icon: MilestoneIcon },
+  { name: 'Profile README', href: '/profile-readme', icon: StarIcon },
+  { name: 'Open Source Finder', href: '/open-source', icon: SearchIcon },
+  { name: 'Repo SEO', href: '/seo', icon: TelescopeIcon },
+  { name: 'Stats Dashboard', href: '/stats', icon: GraphIcon },
+  { name: 'AI Commits', href: '/ai-commits', icon: CommentIcon },
+  { name: 'Markdown Editor', href: '/markdown', icon: PencilIcon },
+  { name: 'Settings', href: '/settings', icon: GearIcon },
 ];
 
 export function Sidebar() {
@@ -76,8 +76,8 @@ export function Sidebar() {
           rel="noreferrer"
           className="flex items-center justify-center gap-2 rounded-md bg-[#21262d] border border-github-border px-4 py-2 text-sm font-semibold text-white hover:bg-[#30363d] transition-colors"
         >
-          <Star className="h-4 w-4 text-github-muted" />
-          Star on GitHub
+          <StarIcon className="h-4 w-4 text-github-muted" />
+          StarIcon on GitHub
         </a>
       </div>
     </div>

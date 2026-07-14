@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { triggerSupportCard } from '../components/ui/SupportCard';
-import { History, Activity, Shield, Code, Settings as SettingsIcon } from 'lucide-react';
+import { HistoryIcon, PulseIcon, ShieldIcon, CodeIcon, GearIcon } from '@primer/octicons-react';
 
 export function Dashboard() {
   const [history, setHistory] = useState<string[]>([]);
@@ -32,7 +32,7 @@ export function Dashboard() {
       <div className="grid gap-6 md:grid-cols-2">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="rounded-xl border border-github-border bg-github-canvas p-6">
           <div className="flex justify-between items-start mb-4">
-            <h2 className="text-lg font-semibold text-white flex items-center gap-2"><SettingsIcon className="h-5 w-5 text-github-muted"/> API Status</h2>
+            <h2 className="text-lg font-semibold text-white flex items-center gap-2"><GearIcon className="h-5 w-5 text-github-muted"/> API Status</h2>
             <span className={`px-2 py-1 text-xs font-medium rounded-full border ${token ? 'border-github-success text-github-success bg-github-success/10' : 'border-yellow-500 text-yellow-500 bg-yellow-500/10'}`}>
               {token ? 'Authenticated' : 'Rate Limited (60/hr)'}
             </span>
@@ -46,7 +46,7 @@ export function Dashboard() {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="rounded-xl border border-github-border bg-github-canvas p-6">
-          <h2 className="text-lg font-semibold text-white flex items-center gap-2 mb-4"><History className="h-5 w-5 text-github-muted"/> Recent Activity</h2>
+          <h2 className="text-lg font-semibold text-white flex items-center gap-2 mb-4"><HistoryIcon className="h-5 w-5 text-github-muted"/> Recent PulseIcon</h2>
           {history.length > 0 ? (
             <ul className="space-y-3 text-sm">
               {history.map((h, i) => (
@@ -67,9 +67,9 @@ export function Dashboard() {
         <h2 className="text-xl font-bold text-white mb-6">Popular Tools</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            { title: 'Profile Analyzer', desc: 'Deep insights and graphs for any GitHub profile.', path: '/profile-analyzer', icon: Activity },
-            { title: 'Repo Compare', desc: 'Side-by-side technical comparison of repositories.', path: '/compare', icon: Code },
-            { title: 'Health Checker', desc: 'Audit open-source standards and documentation.', path: '/repo-health', icon: Shield }
+            { title: 'Profile Analyzer', desc: 'Deep insights and graphs for any GitHub profile.', path: '/profile-analyzer', icon: PulseIcon },
+            { title: 'Repo Compare', desc: 'Side-by-side technical comparison of repositories.', path: '/compare', icon: CodeIcon },
+            { title: 'Health Checker', desc: 'Audit open-source standards and documentation.', path: '/repo-health', icon: ShieldIcon }
           ].map((tool, i) => (
             <Link key={i} to={tool.path}>
               <motion.div
