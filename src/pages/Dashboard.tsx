@@ -10,7 +10,7 @@ export function Dashboard() {
         className="mb-8 space-y-4"
       >
         <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-          GitHub Mastery Tools
+          SourceCraft
         </h1>
         <p className="text-lg text-github-text">
           Discover, organize, and improve your GitHub presence with our suite of powerful tools.
