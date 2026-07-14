@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-github-bg: #0d1117;
+  --color-github-canvas: #161b22;
+  --color-github-border: #30363d;
+  --color-github-text: #e6edf3;
+  --color-github-muted: #7d8590;
+  --color-github-link: #2f81f7;
+  --color-github-success: #238636;
+  --color-github-successHover: #2ea043;
+  --color-github-danger: #f85149;
+  --color-github-btn: #21262d;
+  --color-github-btnHover: #30363d;
+  
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-github-bg text-github-text antialiased text-sm leading-[1.5];
+  }
+}
