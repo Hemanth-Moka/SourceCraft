@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import { Layout } from './components/layout/Layout';
 import { Dashboard } from './pages/Dashboard';
 import { ProfileAnalyzer } from './pages/ProfileAnalyzer';
@@ -11,6 +12,8 @@ import { RepoSeo } from './pages/RepoSeo';
 import { Stats } from './pages/Stats';
 import { AiCommits } from './pages/AiCommits';
 import { MarkdownEditor } from './pages/MarkdownEditor';
+import { Settings } from './pages/Settings';
+import { RepoCompare } from './pages/RepoCompare';
 
 function App() {
   return (
@@ -28,8 +31,17 @@ function App() {
           <Route path="stats" element={<Stats />} />
           <Route path="ai-commits" element={<AiCommits />} />
           <Route path="markdown" element={<MarkdownEditor />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="compare" element={<RepoCompare />} />
         </Route>
       </Routes>
+      <Toaster 
+        position="bottom-right" 
+        toastOptions={{ 
+          style: { background: '#161b22', color: '#c9d1d9', border: '1px solid #30363d' },
+          success: { iconTheme: { primary: '#238636', secondary: '#fff' } },
+        }} 
+      />
     </BrowserRouter>
   );
 }

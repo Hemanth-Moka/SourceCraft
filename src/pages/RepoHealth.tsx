@@ -3,6 +3,8 @@ import { Search, CheckCircle2, XCircle, AlertCircle, FileText, Shield } from 'lu
 import { motion } from 'framer-motion';
 import { GitHubService, type GitHubRepoDetails } from '../lib/GitHubService';
 import { triggerSupportCard } from '../components/ui/SupportCard';
+import { ProgressRing } from '../components/ui/ProgressRing';
+import { Skeleton } from '../components/ui/Skeleton';
 
 export function RepoHealth() {
   const [repoStr, setRepoStr] = useState('');
@@ -90,10 +92,12 @@ export function RepoHealth() {
               <p className="text-github-muted mt-1">{repo.description || 'No description'}</p>
             </div>
             <div className="text-center">
-              <div className={`text-4xl font-bold ${score >= 80 ? 'text-github-success' : score >= 50 ? 'text-yellow-500' : 'text-github-danger'}`}>
-                {score}
-              </div>
-              <div className="text-xs text-github-muted uppercase tracking-wider font-semibold mt-1">Health Score</div>
+              <ProgressRing 
+                radius={40} 
+                stroke={6} 
+                progress={score} 
+                color={score >= 80 ? '#238636' : score >= 50 ? '#d29922' : '#f85149'} 
+              />
             </div>
           </div>
 

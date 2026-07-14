@@ -1,10 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, User, Activity, FileText, Award, Star, Search, BarChart3, MessageSquare, Edit3, LineChart } from 'lucide-react';
+import { LayoutDashboard, User, Activity, FileText, Award, Star, Search, BarChart3, MessageSquare, Edit3, LineChart, Code, Settings as SettingsIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const navigation = [
   { name: 'Dashboard', href: '/', icon: LayoutDashboard },
   { name: 'Profile Analyzer', href: '/profile-analyzer', icon: User },
+  { name: 'Repo Compare', href: '/compare', icon: Code },
   { name: 'Repo Health', href: '/repo-health', icon: Activity },
   { name: 'README Generator', href: '/readme-generator', icon: FileText },
   { name: 'Badge Generator', href: '/badge-generator', icon: Award },
@@ -14,6 +15,7 @@ const navigation = [
   { name: 'Stats Dashboard', href: '/stats', icon: BarChart3 },
   { name: 'AI Commits', href: '/ai-commits', icon: MessageSquare },
   { name: 'Markdown Editor', href: '/markdown', icon: Edit3 },
+  { name: 'Settings', href: '/settings', icon: SettingsIcon },
 ];
 
 export function Sidebar() {
@@ -67,6 +69,17 @@ export function Sidebar() {
           );
         })}
       </nav>
+      <div className="mt-auto pt-8 pb-4">
+        <a
+          href="https://github.com/Hemanth-Moka/SourceCraft"
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center justify-center gap-2 rounded-md bg-[#21262d] border border-github-border px-4 py-2 text-sm font-semibold text-white hover:bg-[#30363d] transition-colors"
+        >
+          <Star className="h-4 w-4 text-github-muted" />
+          Star on GitHub
+        </a>
+      </div>
     </div>
   );
 }

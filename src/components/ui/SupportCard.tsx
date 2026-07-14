@@ -56,7 +56,7 @@ export function SupportCard() {
                 If this tool saved you time, consider giving the project a ⭐ on GitHub. It helps the project grow and motivates continued development.
               </p>
               <a
-                href="https://github.com"
+                href="https://github.com/Hemanth-Moka/SourceCraft"
                 target="_blank"
                 rel="noreferrer"
                 onClick={handleDismiss}
