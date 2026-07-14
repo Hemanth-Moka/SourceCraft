@@ -74,11 +74,15 @@ export function Sidebar() {
           href="https://github.com/Hemanth-Moka/SourceCraft"
           target="_blank"
           rel="noreferrer"
-          className="flex items-center justify-center gap-2 rounded-md bg-[#21262d] border border-github-border px-4 py-2 text-sm font-semibold text-white hover:bg-[#30363d] transition-colors"
+          className="flex items-center justify-center gap-2 rounded-md bg-[#21262d] border border-github-border px-4 py-2 text-sm font-semibold text-white hover:bg-[#30363d] transition-colors mb-4"
         >
           <StarIcon className="h-4 w-4 text-github-muted" />
-          StarIcon on GitHub
+          Star on GitHub
         </a>
+        <div className="text-center text-xs text-github-muted">
+          Designed and developed by<br/>
+          <span className="font-semibold text-github-text">Hemanth Moka</span>
+        </div>
       </div>
     </div>
   );
