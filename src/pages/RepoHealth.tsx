@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { GitHubService, type GitHubRepoDetails } from '../lib/GitHubService';
 import { triggerSupportCard } from '../components/ui/SupportCard';
 import { ProgressRing } from '../components/ui/ProgressRing';
-import { Skeleton } from '../components/ui/Skeleton';
 
 export function RepoHealth() {
   const [repoStr, setRepoStr] = useState('');

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { SearchIcon, LinkExternalIcon, GitMergeIcon, IssueOpenedIcon, ClockIcon } from '@primer/octicons-react';
 import { motion } from 'framer-motion';
 import { triggerSupportCard } from '../components/ui/SupportCard';
 

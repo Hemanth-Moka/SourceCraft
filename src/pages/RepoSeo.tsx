@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { SearchIcon } from '@primer/octicons-react';
 import { GitHubService, type GitHubRepoDetails } from '../lib/GitHubService';
 
 export function RepoSeo() {

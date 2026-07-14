@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SearchIcon, StarIcon, RepoForkedIcon, RepoIcon } from '@primer/octicons-react';
+import { StarIcon, RepoForkedIcon, RepoIcon } from '@primer/octicons-react';
 import { motion } from 'framer-motion';
 import { GitHubService } from '../lib/GitHubService';
 import { triggerSupportCard } from '../components/ui/SupportCard';

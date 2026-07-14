@@ -18,6 +18,7 @@ export interface GitHubRepo {
   stargazers_count: number;
   language: string;
   updated_at: string;
+  created_at: string;
   forks_count: number;
 }
 
@@ -33,6 +34,7 @@ export interface GitHubRepoDetails extends GitHubRepo {
   license: {
     key: string;
     name: string;
+    spdx_id: string;
   } | null;
   topics?: string[];
 }
