@@ -23,3 +23,8 @@
     @apply bg-github-bg text-github-text antialiased text-sm leading-[1.5];
   }
 }
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
